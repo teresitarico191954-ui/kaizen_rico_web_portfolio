@@ -34,7 +34,7 @@ export const portfolioData = {
       title: "My Personal Portfolio",
       description: "A personal portfolio website built with Vite, Vue.js, Tailwind CSS, ",
       tech: ["Vite", "Vue.js", "Tailwind CSS", "OpenAI API"],
-      demoUrl: "https://example.com",
+      demoUrl: "https://kaizenricowebportfolio-production.up.railway.app/",
       githubUrl: "https://github.com/cedricrico/Kaizen_rico"
     }
   ],
