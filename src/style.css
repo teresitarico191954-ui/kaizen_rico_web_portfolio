@@ -1,0 +1,141 @@
+@import "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --accentColor: #c2a4ff;
+  --accentNeon: #a87cff;
+  --backgroundColor: #0b080c;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0b080c;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  background-color: #0b080c;
+  color: #eae5ec;
+  overflow-x: hidden;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Cyber / Glow Utilities */
+.glow-purple {
+  box-shadow: 0 0 50px -10px rgba(168, 124, 255, 0.25);
+}
+
+.glow-card {
+  background: radial-gradient(circle at 50% 0%, rgba(194, 164, 255, 0.08) 0%, transparent 70%), #120d15;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #c2a4ff 60%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.badge-glow {
+  box-shadow: 0 0 15px rgba(168, 124, 255, 0.2);
+}
+
+/* ============ Light Mode Overrides ============ */
+html:not(.dark),
+html:not(.dark) body {
+  background-color: #f6f3fa;
+  color: #33284a;
+}
+
+/* Surfaces */
+html:not(.dark) [class*="bg-[#0b080c]"] { background-color: #f6f3fa !important; }
+html:not(.dark) [class*="bg-[#120d15]"],
+html:not(.dark) [class*="bg-[#120d14]"] { background-color: #ffffff !important; }
+html:not(.dark) [class*="bg-[#0e0916]"] { background-color: rgba(255, 255, 255, 0.85) !important; }
+html:not(.dark) [class*="bg-[#140d1e]"],
+html:not(.dark) [class*="bg-[#140e18]"],
+html:not(.dark) [class*="bg-[#0f0a13]"],
+html:not(.dark) [class*="bg-[#16101a]"],
+html:not(.dark) [class*="bg-[#1b1128]"] { background-color: #efe9f8 !important; }
+
+/* Text */
+html:not(.dark) [class*="text-white"] { color: #241a35 !important; }
+html:not(.dark) [class*="text-slate-200"] { color: #33284a !important; }
+html:not(.dark) [class*="text-slate-300"] { color: #4a4066 !important; }
+html:not(.dark) [class*="text-slate-400"] { color: #6b6285 !important; }
+html:not(.dark) [class*="text-slate-500"],
+html:not(.dark) [class*="text-slate-600"] { color: #8b84a3 !important; }
+html:not(.dark) [class*="text-[#c2a4ff]"] { color: #7c3aed !important; }
+html:not(.dark) [class*="text-[#a87cff]"] { color: #7c3aed !important; }
+html:not(.dark) [class*="text-[#eae5ec]"] { color: #33284a !important; }
+
+/* Borders & accent panels */
+html:not(.dark) [class*="border-purple-500/"] { border-color: rgba(124, 58, 237, 0.22) !important; }
+html:not(.dark) [class*="bg-purple-950/"] { background-color: rgba(124, 58, 237, 0.08) !important; }
+html:not(.dark) [class*="bg-purple-900/"] { background-color: rgba(124, 58, 237, 0.12) !important; }
+
+/* Keep button text white on brand gradients */
+html:not(.dark) [class*="from-purple-600"],
+html:not(.dark) [class*="from-purple-600"] * { color: #ffffff !important; }
+html:not(.dark) [class*="from-purple-600"] { background-image: linear-gradient(to right, #8b5cf6, #6366f1) !important; }
+html:not(.dark) [class*="hover:from-purple-500"]:hover { background-image: linear-gradient(to right, #a78bfa, #818cf8) !important; }
+
+/* Hero section keeps its dark game-style look in light mode */
+html:not(.dark) #about [class*="bg-[#0b080c]"] { background-color: #0b080c !important; }
+html:not(.dark) #about [class*="bg-[#0e0916]"] { background-color: rgba(14, 9, 22, 0.8) !important; }
+html:not(.dark) #about [class*="bg-[#140d1e]"] { background-color: rgba(20, 13, 30, 0.9) !important; }
+html:not(.dark) #about [class*="text-white"] { color: #ffffff !important; }
+html:not(.dark) #about [class*="text-slate-200"] { color: #e2e8f0 !important; }
+html:not(.dark) #about [class*="text-slate-300"] { color: #cbd5e1 !important; }
+html:not(.dark) #about [class*="text-slate-400"] { color: #94a3b8 !important; }
+html:not(.dark) #about [class*="text-slate-500"] { color: #64748b !important; }
+html:not(.dark) #about [class*="text-[#c2a4ff]"] { color: #c2a4ff !important; }
+html:not(.dark) #about [class*="border-purple-500/"] { border-color: rgba(168, 85, 247, 0.25) !important; }
+html:not(.dark) #about [class*="bg-purple-950/"] { background-color: rgba(59, 7, 100, 0.4) !important; }
+
+/* Eye-lid blink overlay & 3D scene stay dark — intentional POV effect */
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
